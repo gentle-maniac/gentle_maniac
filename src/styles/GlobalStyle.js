@@ -3,20 +3,20 @@ import { normalize } from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
-    ${normalize}
+    /* ${normalize} */
 
 	html, body, #__next  {
 		height: 100%;
+		margin: 0px;
+		padding: 0px;
 	}
 
 	body {
-		background: linear-gradient(to right, hsl(229,14%,23%), hsl(306,6%,32%));
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: Montserrat, sans-serif;
 		font-size: 18px;
 		line-height: 1.5;
-		color: #fff;
 	}
 
 	*,
@@ -29,5 +29,9 @@ export const GlobalStyle = createGlobalStyle`
 		color: hsl(350, 100%, 92%);
 		text-decoration: none;
 		display: inline-block;
+	}
+
+	::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+		display: none;
 	}
 `;
