@@ -3,12 +3,14 @@ import { normalize } from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
-    /* ${normalize} */
+    ${normalize}
 
 	html, body, #__next  {
 		height: 100%;
-		margin: 0px;
-		padding: 0px;
+	}
+
+	html {
+    	background-color: black;
 	}
 
 	body {

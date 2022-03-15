@@ -17,7 +17,7 @@ const Section = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 70px);
+    height: 100vh;
     margin: 0 auto;
 
     @media screen and (min-width: 480px) {
@@ -37,6 +37,10 @@ const SectionTheme = {
   black: css`
     color: white;
     background-color: black;
+  `,
+  white: css`
+    color: black;
+    background-color: white;
   `,
   primary: css`
     color: white;

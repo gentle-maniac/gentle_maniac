@@ -2,7 +2,7 @@ import { SectionLayout, Title } from "../components";
 
 export const GreetingSection = () => {
   return (
-    <SectionLayout>
+    <SectionLayout theme="white">
       <Title>대표님 인사말</Title>
       <div>
         게임업계에는 게임이 정말 좋아서 이 일을 시작한 사람이 많거든요. 그런데

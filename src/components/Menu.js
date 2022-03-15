@@ -5,10 +5,10 @@ export const Menu = () => {
 };
 
 const Wrapper = styled.div`
-  position: fixed;
+  position: absolute;
   top: 2rem;
   right: 2rem;
   background-color: white;
-
+  z-index: 1000;
   cursor: pointer;
 `;
