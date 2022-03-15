@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components";
+import { Menu, SEO } from "../components";
 import {
   HomeSection,
   GreetingSection,
@@ -10,6 +10,7 @@ import {
 export default function Index() {
   return (
     <>
+      <Menu />
       <SEO />
 
       <LogoSection />
