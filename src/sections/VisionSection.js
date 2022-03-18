@@ -17,9 +17,9 @@ export const VisionSection = () => {
   return (
     <SectionLayout theme="black">
       <Container ref={parallax} pages={3} horizontal>
-        <Page offset={0} gradient="pink" onClick={() => scroll(1)} />
-        <Page offset={1} gradient="teal" onClick={() => scroll(2)} />
-        <Page offset={2} gradient="tomato" onClick={() => scroll(0)} />
+        <Page offset={0} gradient="gold" onClick={() => scroll(1)} />
+        <Page offset={1} gradient="gold" onClick={() => scroll(2)} />
+        <Page offset={2} gradient="gold" onClick={() => scroll(0)} />
       </Container>
     </SectionLayout>
   );
@@ -52,6 +52,8 @@ const Page = ({ offset, gradient, onClick }) => (
 );
 
 const Container = styled(Parallax)`
+  background-color: #20232f;
+
   & > div > div {
     display: flex;
     align-items: center;
@@ -74,17 +76,10 @@ const Container = styled(Parallax)`
     height: 100%;
   }
 
-  .pink {
-    background: linear-gradient(to right, deeppink 0%, coral 100%);
-  }
-
-  .teal {
-    background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
-  }
-
-  .tomato {
+  .gold {
     background: linear-gradient(to right, tomato 0%, gold 100%);
   }
+
   .indicator {
     font-family: "Kanit", sans-serif;
     font-size: 500px;

@@ -17,8 +17,11 @@ const Section = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
+
+    padding-left: 30px;
+    padding-right: 30px;
 
     @media screen and (min-width: 480px) {
       padding-left: 30px;
@@ -44,6 +47,6 @@ const SectionTheme = {
   `,
   primary: css`
     color: white;
-    background-color: #D29B3A;
+    background-color: #d29b3a;
   `,
 };
