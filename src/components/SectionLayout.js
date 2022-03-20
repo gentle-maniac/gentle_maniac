@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
+import { device } from "../styles";
 
 export const SectionLayout = ({ children, ...props }) => {
   return (
@@ -20,19 +21,11 @@ const Section = styled.section`
     min-height: 100vh;
     margin: 0 auto;
 
-    padding-left: 30px;
-    padding-right: 30px;
-
-    @media screen and (min-width: 480px) {
+    @media ${device.mobile} {
       padding-left: 30px;
       padding-right: 30px;
     }
-    @media screen and (min-width: 768px) {
-      max-width: 780px;
-    }
-    @media screen and (min-width: 1024px) {
-      max-width: 1020px;
-    }
+    max-width: 1140px;
   }
 `;
 
