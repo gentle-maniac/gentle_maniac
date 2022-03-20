@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: NanumSquareExtraBold;
 	}
 
-	p {
+	p, span {
 		@media ${device.mobile} {
 			font-size: 15px;
 		}

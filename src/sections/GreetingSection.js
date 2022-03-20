@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { SectionLayout, Title } from "../components";
+import { SectionLayout } from "../components";
 
 export const GreetingSection = () => {
   return (
     <SectionLayout theme="black">
       <Wrapper>
-        <Title>대표님 인사말</Title>
+        <h1>대표님 인사말</h1>
 
         <Underline />
 
