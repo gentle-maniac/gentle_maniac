@@ -1,9 +1,8 @@
-// @ts-nocheck
 import { useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-import { SectionLayout, Title } from "../components";
+import { SectionLayout } from "../components";
 
 export const VisionSection = () => {
   const parallax = useRef(null);
@@ -38,7 +37,7 @@ const Page = ({ offset, gradient, onClick }) => (
     <ParallaxLayer offset={offset} speed={0.3} onClick={onClick}>
       <div>
         <span className="indicator">{offset + 1}</span>
-        <Title>젠틀매니악의 비젼</Title>
+        <h1>젠틀매니악의 비젼</h1>
         <div>
           <div>글로벌 서브컬처 게임 제작</div>
           <div>

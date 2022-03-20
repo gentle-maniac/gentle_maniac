@@ -15,7 +15,7 @@ export default function Index() {
     <>
       <Menu />
       <SEO />
-      <Parallax pages={7}>
+      <Parallax pages={8}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -36,7 +36,7 @@ export default function Index() {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={5.4} speed={0.5}>
+        <ParallaxLayer offset={6.5} speed={0.5}>
           <WelfareSection />
         </ParallaxLayer>
       </Parallax>

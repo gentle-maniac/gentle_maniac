@@ -1,8 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+import { device } from "./mediaDevice";
 
 export const GlobalStyle = createGlobalStyle`
-	@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
     ${normalize}
 
 	html, body, #__next  {
@@ -16,9 +16,8 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		font-family: Montserrat, sans-serif;
+		font-family: NanumSquare;
 		font-size: 18px;
-		line-height: 1.5;
 	}
 
 	*,
@@ -27,13 +26,56 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
-	a {
-		color: hsl(350, 100%, 92%);
-		text-decoration: none;
-		display: inline-block;
-	}
-
 	::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
 		display: none;
+	}
+
+	img {
+		user-select: none;
+	}
+
+	h1, h2, h3, h4, h5, h6, span, p, div {
+		margin: 0;
+		padding: 0;
+		word-break: keep-all;
+		white-space: pre-wrap;
+	}
+
+	h1 {
+		@media ${device.mobile} {
+			font-size: 28px;
+			margin-bottom: 60px;
+		}
+		font-size: 50px;
+    	line-height: 1.4;
+		margin-bottom: 80px;
+		font-family: NanumSquareExtraBold;
+	}
+
+	h2 {
+		@media ${device.mobile} {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		font-size: 40px;
+    	line-height: 1.4;
+		font-family: NanumSquareExtraBold;
+	}
+
+	p, span {
+		@media ${device.mobile} {
+			font-size: 15px;
+		}
+		font-size: 22px;
+    	line-height: 1.5;
+		font-family: NanumSquare;
+	}
+
+	.b {
+		font-family: NanumSquareBold;
+	}
+
+	.gold {
+		color: #d29b3a;
 	}
 `;

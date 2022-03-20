@@ -1,26 +1,26 @@
 import styled from "styled-components";
-import { SectionLayout, Text, Title } from "../components";
+import { SectionLayout } from "../components";
 
 export const HomeSection = () => {
   return (
     <SectionLayout theme="primary">
       <Wrapper>
         <div>
-          <Title>
-            라스트오리진 핵심 개발진<Text>으로 구성된</Text>
-          </Title>
-          <Title>국내 최고의 서브컬처 게임 개발사</Title>
+          <h1>
+            라스트오리진 핵심 개발진<span>으로 구성된</span>
+          </h1>
+          <h1>국내 최고의 서브컬처 게임 개발사</h1>
         </div>
         <Line />
       </Wrapper>
 
       <Wrapper>
         <Line />
-        <Text>
+        <p>
           라스트오리진개발총괄, 프로듀서, 아트디렉터, <br />
           프로그래밍총괄 등 라스트오리진 초기부터 <br />
           개발한 핵심 개발진으로 이루어진 팀
-        </Text>
+        </p>
       </Wrapper>
     </SectionLayout>
   );
