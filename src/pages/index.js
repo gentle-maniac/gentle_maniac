@@ -36,7 +36,7 @@ export default function Index() {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={6.4} speed={0.5}>
+        <ParallaxLayer offset={6.5} speed={0.5}>
           <WelfareSection />
         </ParallaxLayer>
       </Parallax>

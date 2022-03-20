@@ -34,7 +34,7 @@ export const TalentSection = () => {
 
 const Wrapper = styled.div`
   & > :last-child {
-    margin-top: 7rem;
+    margin-top: 10rem;
     & > * + * {
       @media ${device.mobile} {
         margin-top: 4rem;
