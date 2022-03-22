@@ -71,11 +71,11 @@ const menuData = [
     text: "비전",
   },
   {
-    to: 4,
+    to: 4.1,
     text: "인재상",
   },
   {
-    to: 5.3,
+    to: 6.5 ,
     text: "복지",
   },
 ];

@@ -26,7 +26,7 @@ export default function Index() {
           <LogoSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.2}>
+        <ParallaxLayer offset={0.7} speed={0.2}>
           <HomeSection />
         </ParallaxLayer>
 
