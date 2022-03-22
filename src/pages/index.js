@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Menu, SEO } from "../components";
 import {
@@ -11,11 +11,17 @@ import {
 } from "../sections";
 
 export default function Index() {
+  const parallaxRef = useRef(null);
+
+  const scrollTo = (to) => {
+    parallaxRef.current?.scrollTo(to);
+  };
+
   return (
     <>
-      <Menu />
+      <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax pages={8}>
+      <Parallax className="parallax" ref={parallaxRef} pages={8}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
