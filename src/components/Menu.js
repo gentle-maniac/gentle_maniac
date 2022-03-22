@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { throttle } from "lodash";
+import { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
 import { device } from "../styles";
+import { toFit } from "../utils";
 
 export const Menu = ({ scrollTo }) => {
   const [scrollY, setScrollY] = useState(0);
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const listener = (e) => {
+    const listener = toFit((e) => {
       const nextSrollY = e.target.scrollTop;
       setHide(nextSrollY > scrollY);
       setScrollY(nextSrollY);
-    };
+    });
 
     const $parallax = document.querySelector(".parallax");
     $parallax.addEventListener("scroll", listener);
@@ -42,7 +44,7 @@ const Wrapper = styled.div`
     color: white;
     cursor: pointer;
     transition: all 200ms ease-in-out;
-    
+
     &:hover {
       font-family: NanumSquareBold;
     }
@@ -62,7 +64,7 @@ const menuData = [
   },
   {
     to: 2,
-    text: "대표 인사",
+    text: "인사말",
   },
   {
     to: 3,
