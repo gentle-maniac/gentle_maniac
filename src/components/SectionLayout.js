@@ -27,6 +27,8 @@ const Section = styled.section`
       padding-left: 30px;
       padding-right: 30px;
     }
+    padding-left: 60px;
+    padding-right: 60px;
     max-width: 1140px;
   }
 `;

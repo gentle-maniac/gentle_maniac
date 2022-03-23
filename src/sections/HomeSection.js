@@ -23,11 +23,13 @@ export const HomeSection = () => {
       </Wrapper>
 
       <Wrapper>
-        <Trail open={visible} delay={200}>
-          <p>라스트오리진 개발 총괄</p>
-          <p>프로듀서, 아트디렉터, 프로그래밍총괄 등</p>
-          <p>라스트오리진 초기부터 개발한 핵심 개발진으로 이루어진 팀</p>
-        </Trail>
+        <div className="right">
+          <Trail open={visible} delay={200}>
+            <p>라스트오리진 개발 총괄</p>
+            <p>프로듀서, 아트디렉터, 프로그래밍총괄 등</p>
+            <p>라스트오리진 초기부터 개발한 핵심 개발진으로 이루어진 팀</p>
+          </Trail>
+        </div>
       </Wrapper>
     </SectionLayout>
   );
@@ -46,6 +48,9 @@ const Wrapper = styled.div`
   .row {
     display: flex;
     align-items: flex-end;
+  }
+  .right {
+    margin-left: auto;
   }
 
   & > * + * {
