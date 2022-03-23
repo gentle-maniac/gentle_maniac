@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Menu, SEO } from "../components";
+import { Footer, Menu, SEO } from "../components";
 import {
   HomeSection,
   GreetingSection,
@@ -21,7 +21,7 @@ export default function Index() {
     <>
       <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax className="parallax" ref={parallaxRef} pages={8}>
+      <Parallax className="parallax" ref={parallaxRef} pages={7.8}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -42,8 +42,12 @@ export default function Index() {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={6.5} speed={0.5}>
+        <ParallaxLayer offset={6.7} speed={0.5}>
           <WelfareSection />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={7.6} speed={0.5}>
+          <Footer />
         </ParallaxLayer>
       </Parallax>
     </>

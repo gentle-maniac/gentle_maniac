@@ -12,9 +12,10 @@ export const HomeSection = () => {
     <SectionLayout ref={ref} theme="primary">
       <Wrapper>
         <Trail open={visible}>
-          <div className="row">
-            <h2>라스트오리진 핵심 개발진</h2>
-            <p>으로 구성된</p>
+          <div>
+            <h2>
+              라스트오리진 핵심 개발진<p>으로 구성된</p>
+            </h2>
           </div>
           <h1>
             국내 최고의 <span className="u">서브컬처</span> 게임 개발사
@@ -43,6 +44,11 @@ const Wrapper = styled.div`
 
   h1 {
     margin: 0;
+  }
+  h2 {
+    p {
+      display: inline-block;
+    }
   }
 
   .row {

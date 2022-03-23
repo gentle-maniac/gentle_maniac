@@ -1,5 +1,4 @@
-import { throttle } from "lodash";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { device } from "../styles";
 import { toFit } from "../utils";
@@ -37,13 +36,14 @@ const Wrapper = styled.div`
   }
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 1.5rem;
   z-index: 1000;
 
   & > p {
     color: white;
     cursor: pointer;
     transition: all 200ms ease-in-out;
+    text-align: right;
 
     &:hover {
       font-family: NanumSquareBold;
@@ -75,7 +75,7 @@ const menuData = [
     text: "인재상",
   },
   {
-    to: 6.3 ,
+    to: 6.5,
     text: "복지",
   },
 ];

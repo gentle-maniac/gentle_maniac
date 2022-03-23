@@ -1,5 +1,6 @@
 // @ts-nocheck
 export { default as 로고 } from "./images/로고.png";
+export { default as 로고s } from "./images/로고s.png";
 export { default as 복지01 } from "./images/복지01.png";
 export { default as 복지02 } from "./images/복지02.png";
 export { default as 복지03 } from "./images/복지03.png";
