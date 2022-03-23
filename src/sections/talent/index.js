@@ -1,4 +1,6 @@
-import { useRef } from "react";
+// @ts-nocheck
+import { useRef, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { SectionLayout } from "../../components";
 import { device } from "../../styles";
@@ -10,10 +12,17 @@ export const TalentSection = () => {
   const titleRef = useRef(null);
   const visible = useObserver(titleRef);
 
+  const titleStyle = useSpring({
+    opacity: visible ? 1 : 0,
+    x: visible ? 0 : -100,
+  });
+
   return (
     <SectionLayout theme="black">
       <Wrapper>
-        <h1 ref={titleRef}>젠틀매니악의 인재상</h1>
+        <animated.h1 ref={titleRef} style={titleStyle}>
+          젠틀매니악의 인재상
+        </animated.h1>
 
         <div>
           {talentData.map((item, index) => (

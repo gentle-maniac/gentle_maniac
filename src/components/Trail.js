@@ -1,7 +1,7 @@
 import React from "react";
 import { useTrail, animated } from "react-spring";
 
-export const Trail = ({ open, children }) => {
+export const Trail = ({ open, children, delay = 0 }) => {
   const items = React.Children.toArray(children);
 
   const trail = useTrail(items.length, {
@@ -9,6 +9,7 @@ export const Trail = ({ open, children }) => {
     opacity: open ? 1 : 0,
     x: open ? 0 : 20,
     from: { opacity: 0, x: 20 },
+    delay,
   });
 
   return (

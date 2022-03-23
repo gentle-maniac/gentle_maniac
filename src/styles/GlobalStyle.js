@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: NanumSquareExtraBold;
 	}
 
-	p, span {
+	p {
 		@media ${device.mobile} {
 			font-size: 15px;
 		}
@@ -73,6 +73,11 @@ export const GlobalStyle = createGlobalStyle`
 
 	.b {
 		font-family: NanumSquareBold;
+	}
+
+	.u {
+		text-decoration: underline;
+		text-underline-position: under;
 	}
 
 	.gold {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const useObserver = (
   ref,
-  option = { rootMargin: "0px", threshold: 0.3 }
+  option = { rootMargin: "0px", threshold: 0.4 }
 ) => {
   const [isIntersecting, setIntersecting] = useState(false);
 

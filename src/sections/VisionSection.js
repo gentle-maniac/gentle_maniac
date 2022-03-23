@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRef } from "react";
 import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
