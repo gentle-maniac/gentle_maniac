@@ -1,14 +1,16 @@
+import React from "react";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { device } from "../styles";
 
-export const SectionLayout = ({ children, ...props }) => {
+export const SectionLayout = React.forwardRef(({ children, ...props }, ref) => {
   return (
-    <Section {...props}>
+    <Section {...props} ref={ref}>
       <div>{children}</div>
     </Section>
   );
-};
+});
+SectionLayout.displayName = "SectionLayout";
 
 const Section = styled.section`
   ${(props) => SectionTheme[props.theme]}
@@ -25,6 +27,8 @@ const Section = styled.section`
       padding-left: 30px;
       padding-right: 30px;
     }
+    padding-left: 60px;
+    padding-right: 60px;
     max-width: 1140px;
   }
 `;
