@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	img {
 		user-select: none;
+		pointer-events: none;
 	}
 
 	h1, h2, h3, h4, h5, h6, span, p, div {
