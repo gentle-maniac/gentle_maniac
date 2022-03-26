@@ -16,7 +16,7 @@ export const LogoSection = () => {
 
   const { opacity } = useSpring({ opacity: mounted ? 1 : 0 });
   const style = useSpring({
-    transform: visible ? "scale(1.3)" : "scale(0.9)",
+    transform: visible ? "scale(1.0)" : "scale(0.7)",
   });
 
   return (

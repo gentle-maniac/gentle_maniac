@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Footer, Menu, SEO } from "../components";
+import { DirectorImage, Footer, Menu, SEO } from "../components";
 import {
   HomeSection,
   GreetingSection,
@@ -30,8 +30,16 @@ export default function Index() {
           <HomeSection />
         </ParallaxLayer>
 
+        <ParallaxLayer offset={1.5} speed={0.3}>
+          <DirectorImage src="대표님02" />
+        </ParallaxLayer>
+
         <ParallaxLayer offset={2} speed={0.2}>
           <GreetingSection />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.6} speed={0.3}>
+          <DirectorImage src="대표님01" align="flex-end" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={0.2}>

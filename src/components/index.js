@@ -1,4 +1,5 @@
-export * from "./Footer"
+export * from "./DirectorImage";
+export * from "./Footer";
 export * from "./Menu";
 export * from "./SectionLayout";
 export * from "./SEO";

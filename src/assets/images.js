@@ -1,4 +1,6 @@
 // @ts-nocheck
+export { default as 대표님01 } from "./images/대표님01.png";
+export { default as 대표님02 } from "./images/대표님02.png";
 export { default as 로고 } from "./images/로고.png";
 export { default as 로고s } from "./images/로고s.png";
 export { default as 복지01 } from "./images/복지01.png";
