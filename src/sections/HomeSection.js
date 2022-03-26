@@ -1,6 +1,9 @@
 // @ts-nocheck
+import Image from "next/image";
 import { useRef } from "react";
+import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
+import { Img } from "../assets";
 import { SectionLayout, Trail } from "../components";
 import { device } from "../styles";
 import { useObserver } from "../utils";
@@ -8,6 +11,10 @@ import { useObserver } from "../utils";
 export const HomeSection = () => {
   const ref = useRef(null);
   const visible = useObserver(ref);
+  const backgroundStyle = useSpring({
+    opacity: visible ? 0.14 : 0,
+    config: { duration: 2000 },
+  });
 
   return (
     <SectionLayout ref={ref} theme="primary">
@@ -33,6 +40,16 @@ export const HomeSection = () => {
           </Trail>
         </div>
       </Wrapper>
+
+      <Background style={backgroundStyle}>
+        <Image
+          src={Img.아케인_클라우드_썸네일}
+          alt="아케인_클라우드_썸네일"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </Background>
     </SectionLayout>
   );
 };
@@ -51,6 +68,9 @@ const Wrapper = styled.div`
       display: inline-block;
     }
   }
+  p {
+    font-weight: 700;
+  }
 
   .row {
     display: flex;
@@ -66,4 +86,12 @@ const Wrapper = styled.div`
   & > * + * {
     margin-left: 1.5rem;
   }
+`;
+
+const Background = styled(animated.div)`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
 `;
