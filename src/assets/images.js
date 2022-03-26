@@ -18,3 +18,8 @@ export { default as 인재상01 } from "./images/인재상01.png";
 export { default as 인재상02 } from "./images/인재상02.png";
 export { default as 인재상03 } from "./images/인재상03.png";
 export { default as 인재상04 } from "./images/인재상04.png";
+export { default as n01 } from "./images/n01.주인공방.png";
+export { default as n02 } from "./images/n02.에버릿.png";
+export { default as n03 } from "./images/n03.안채영.png";
+export { default as n04 } from "./images/n04.러프구체.png";
+export { default as n06 } from "./images/n06.사령술사2차.png";

@@ -51,9 +51,3 @@ const Wrapper = styled.div`
     border-bottom: 2px solid;
   }
 `;
-
-const Underline = styled.div`
-  height: 2px;
-  background-color: white;
-  margin: 1rem 0rem;
-`;
