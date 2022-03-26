@@ -1,28 +1,47 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { useEffect, useState, useRef } from "react";
+import { animated, useSpring } from "react-spring";
 import { device } from "../styles";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
+import { useObserver } from "../utils";
 
 
 export const WelfareSection = () => {
+  const titleRef = useRef(null);
+  const visible = useObserver(titleRef, { rootMargin: "0px", threshold: 0.1 });
+
+  const titleStyle = useSpring({
+    opacity: visible ? 1 : 0,
+    x: visible ? 0 : -100,
+    transform: visible ? "scale(1.0)" : "scale(0.3)",
+  });
+
+  const titleStyle2 = useSpring({
+    opacity: visible ? 1 : 0,
+    x: visible ? 0 : 100,
+    transform: visible ? "scale(1.0)" : "scale(0.3)"
+  });
+
   return (
     <SectionLayout theme="black">
       <Wrapper>
-        <h1>WELFARE</h1>
+        <animated.h1>WELFARE</animated.h1>
 
         <div className="container">
           {welfareData.map((v, i) => (
-            <WelfareItem key={i}>
-              
-              <div className="icon">
-                <Image src={v.icon} alt="복지" priority />
-              </div>
-              <div>
-                <div className="title">{v.title}</div>
-                <div className="content">{v.content}</div>
-              </div>
-            </WelfareItem>
+            <animated.div ref={titleRef} style={ i % 2 == 0 ? titleStyle : titleStyle2 }>
+              <WelfareItem key={i}>
+                <div className="icon">
+                  <Image src={v.icon} alt="복지" priority />
+                </div>
+                <div>
+                  <div className="title">{v.title}</div>
+                  <div className="content">{v.content}</div>
+                </div>
+              </WelfareItem>
+            </animated.div>
           ))}
         </div>
       </Wrapper>
@@ -45,11 +64,8 @@ const Wrapper = styled.div`
 
 const WelfareItem = styled.div`
   margin-left: 30%;
+  margin-bottom: 2rem;
   display: flex;
-
-  & + * {
-    margin-top: 2rem;
-  }
 
   & > * + * {
     margin-left: 3rem;
