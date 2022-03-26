@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { Footer, Menu, SEO } from "../components";
+import { DirectorImage, Footer, Menu, SEO } from "../components";
 import {
   HomeSection,
   GreetingSection,
@@ -8,6 +8,7 @@ import {
   VisionSection,
   WelfareSection,
   TalentSection,
+  MakingSection,
 } from "../sections";
 
 export default function Index() {
@@ -21,7 +22,7 @@ export default function Index() {
     <>
       <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax className="parallax" ref={parallaxRef} pages={7.8}>
+      <Parallax className="parallax" ref={parallaxRef} pages={9.8}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -30,8 +31,24 @@ export default function Index() {
           <HomeSection />
         </ParallaxLayer>
 
+        <ParallaxLayer
+          offset={1.5}
+          speed={0.3}
+          style={{ pointerEvents: "none" }}
+        >
+          <DirectorImage src="대표님02" />
+        </ParallaxLayer>
+
         <ParallaxLayer offset={2} speed={0.2}>
           <GreetingSection />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={2.5}
+          speed={0.3}
+          style={{ pointerEvents: "none" }}
+        >
+          <DirectorImage src="대표님01" align="flex-end" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={0.2}>
@@ -42,11 +59,15 @@ export default function Index() {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={6.7} speed={0.5}>
+        <ParallaxLayer offset={6.9} speed={0.5}>
           <WelfareSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={7.6} speed={0.5}>
+        <ParallaxLayer offset={7.9} speed={0.2}>
+          <MakingSection />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={9.5} speed={0.3}>
           <Footer />
         </ParallaxLayer>
       </Parallax>
