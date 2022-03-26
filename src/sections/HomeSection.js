@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import { SectionLayout, Trail } from "../components";
+import { device } from "../styles";
 import { useObserver } from "../utils";
 
 export const HomeSection = () => {
@@ -56,19 +57,13 @@ const Wrapper = styled.div`
     align-items: flex-end;
   }
   .right {
-    margin-left: auto;
+    @media ${device.mobile} {
+      margin-left: auto;
+    }
+    margin-left: 40%;
   }
 
   & > * + * {
     margin-left: 1.5rem;
   }
-`;
-
-const Line = styled.div`
-  height: 2px;
-  background-color: white;
-  flex: 1;
-  position: fixed;
-  left: 0;
-  right: 0;
 `;
