@@ -1,15 +1,18 @@
+// @ts-nocheck
 import React from "react";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { device } from "../styles";
 
-export const SectionLayout = React.forwardRef(({ children, ...props }, ref) => {
-  return (
-    <Section {...props} ref={ref}>
-      <div>{children}</div>
-    </Section>
-  );
-});
+export const SectionLayout = React.forwardRef(
+  ({ children, justify = "center", ...props }, ref) => {
+    return (
+      <Section {...props} {...{ justify }} ref={ref}>
+        <div>{children}</div>
+      </Section>
+    );
+  }
+);
 SectionLayout.displayName = "SectionLayout";
 
 const Section = styled.section`
@@ -19,7 +22,7 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: ${(props) => props.justify};
     min-height: 100vh;
     margin: 0 auto;
 
