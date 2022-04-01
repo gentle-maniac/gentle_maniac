@@ -12,8 +12,8 @@ export const HomeSection = () => {
   const ref = useRef(null);
   const visible = useObserver(ref);
   const backgroundStyle = useSpring({
-    opacity: visible ? 0.14 : 0,
-    config: { duration: 2000 },
+    opacity: visible ? 0.3 : 0,
+    config: { duration: 1000 },
   });
 
   return (

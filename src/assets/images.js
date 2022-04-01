@@ -13,6 +13,7 @@ export { default as 복지07 } from "./images/복지07.png";
 export { default as 비전01 } from "./images/비전01.gif";
 export { default as 비전02 } from "./images/비전02.gif";
 export { default as 비전03 } from "./images/비전03.gif";
+export { default as 배경화면01 } from "./images/배경화면01.png";
 export { default as 아케인_클라우드_썸네일 } from "./images/아케인_클라우드_썸네일.jpg";
 export { default as 인재상01 } from "./images/인재상01.png";
 export { default as 인재상02 } from "./images/인재상02.png";

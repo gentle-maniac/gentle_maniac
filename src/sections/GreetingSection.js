@@ -2,12 +2,13 @@
 import styled from "styled-components";
 import { SectionLayout } from "../components";
 import { device } from "../styles";
+import { Img } from "../assets";
 
 export const GreetingSection = () => {
   return (
     <SectionLayout theme="black" justify="flex-start">
       <Wrapper className="gold">
-        <h1>대표님 인사말</h1>
+        <h1>대표 인사말</h1>
 
         <p>게임업계에는 게임이 정말 좋아서 이 일을 시작한 사람이 많아요.</p>
         <p>
@@ -38,6 +39,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 7rem;
+  background-image: url('/assets/images/배경화면01.png');
 
   h1 {
     @media ${device.mobile} {
