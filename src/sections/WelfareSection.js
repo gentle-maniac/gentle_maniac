@@ -7,47 +7,43 @@ import { Img } from "../assets";
 import { SectionLayout } from "../components";
 import { useObserver } from "../utils";
 
-
 export const WelfareSection = () => {
-  const titleRef = useRef(null);
-  const visible = useObserver(titleRef, { rootMargin: "0px", threshold: 0.1 });
-
-  const titleStyle = useSpring({
-    opacity: visible ? 1 : 0,
-    x: visible ? 0 : -100,
-    transform: visible ? "scale(1.0)" : "scale(0.3)",
-  });
-
-  const titleStyle2 = useSpring({
-    opacity: visible ? 1 : 0,
-    x: visible ? 0 : 100,
-    transform: visible ? "scale(1.0)" : "scale(0.3)"
-  });
-
   return (
     <SectionLayout theme="black">
       <Wrapper>
         <animated.h1>WELFARE</animated.h1>
 
         <div className="container">
-          {welfareData.map((v, i) => (
-            <animated.div ref={titleRef} style={ i % 2 == 0 ? titleStyle : titleStyle2 }>
-              <WelfareItem key={i}>
-                <div className="icon">
-                  <Image src={v.icon} alt="복지" priority />
-                </div>
-                <div>
-                  <div className="title">{v.title}</div>
-                  <div className="content">{v.content}</div>
-                </div>
-              </WelfareItem>
-            </animated.div>
+          { welfareData.map((v, i) => (
+            SectionItem(v,i)
           ))}
         </div>
       </Wrapper>
     </SectionLayout>
   );
 };
+
+const SectionItem = (v, i) => {
+  const titleRef = useRef(null);
+  const titleVisible = useObserver(titleRef);
+  const titleStyle = useSpring({
+    opacity: titleVisible ? 1 : 0,
+    x: titleVisible ? 0 : -150,
+  });
+  return (
+    <animated.div ref={titleRef} style={ titleStyle }>
+      <WelfareItem key={i}>
+        <div className="icon">
+          <Image src={v.icon} alt="복지" priority />
+        </div>
+        <div>
+          <div className="title">{v.title}</div>
+          <div className="content">{v.content}</div>
+        </div>
+      </WelfareItem>
+    </animated.div>
+  )
+}
 
 const Wrapper = styled.div`
   height: 100%;
