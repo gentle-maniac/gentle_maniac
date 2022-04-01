@@ -3,12 +3,11 @@ import { useRef } from "react";
 import styled from "styled-components";
 import { Trail } from "../../components";
 import { device } from "../../styles";
-import { useObserverOnce } from "../../utils";
+import { useObserverOnce, useObserver } from "../../utils";
 
 export const TalentItem = ({ item, index }) => {
   const ref = useRef(null);
-
-  const visible = useObserverOnce(ref);
+  const visible = useObserver(ref);
 
   return (
     <Trail open={visible}>

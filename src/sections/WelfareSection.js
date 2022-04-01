@@ -24,14 +24,14 @@ export const WelfareSection = () => {
 };
 
 const SectionItem = (v, i) => {
-  const titleRef = useRef(null);
-  const titleVisible = useObserver(titleRef);
-  const titleStyle = useSpring({
-    opacity: titleVisible ? 1 : 0,
-    x: titleVisible ? 0 : -150,
+  const itemRef = useRef(null);
+  const itemVisible = useObserver(itemRef);
+  const itemStyle = useSpring({
+    opacity: itemVisible ? 1 : 0,
+    x: itemVisible ? 0 : -150,
   });
   return (
-    <animated.div ref={titleRef} style={ titleStyle }>
+    <animated.div ref={itemRef} style={ itemStyle }>
       <WelfareItem key={i}>
         <div className="icon">
           <Image src={v.icon} alt="복지" priority />

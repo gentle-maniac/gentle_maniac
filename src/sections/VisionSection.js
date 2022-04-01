@@ -1,9 +1,13 @@
 // @ts-nocheck
 import { useRef } from "react";
+import Image from "next/image";
 import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-
+import { Img } from "../assets";
 import { SectionLayout } from "../components";
+import { device } from "../styles";
+import { useObserver } from "../utils";
+import { animated, useSpring } from "react-spring";
 
 export const VisionSection = () => {
   const parallax = useRef(null);
@@ -13,6 +17,14 @@ export const VisionSection = () => {
       parallax.current.scrollTo(to);
     }
   };
+
+  const titleRef = useRef(null);
+  const visible = useObserver(titleRef);
+
+  const titleStyle = useSpring({
+    // opacity: visible ? 1 : 0,
+    // x: visible ? 0 : -100,
+  });
 
   return (
     <SectionLayout theme="black">
@@ -36,20 +48,35 @@ const Page = ({ offset, gradient, onClick }) => (
     </ParallaxLayer>
 
     <ParallaxLayer offset={offset} speed={0.3} onClick={onClick}>
-      <div>
-        <span className="indicator">{offset + 1}</span>
-        <h1>젠틀매니악의 비젼</h1>
+      <VisionItem>
+        <Image src={visionData[offset].icon} width={100} height={100} alt="복지" priority  />
         <div>
-          <div>글로벌 서브컬처 게임 제작</div>
-          <div>
-            페이트처럼 글로벌하게 롱런하는 서브컬처게임이 한국에도 하나는 있어야
-            하지 않을까? 우리가 해 보자. 우리의 IP로 유니버스를 만들어 보자.
-          </div>
+          <h1>{visionData[offset].title}</h1>
+          <p>
+            {visionData[offset].content}
+          </p>
         </div>
-      </div>
+      </VisionItem>
     </ParallaxLayer>
   </>
 );
+
+
+const Header = styled.h1`
+  /* position: fixed; */
+  /* @media ${device.mobile} { 
+    margin-left: 10%;
+    margin-right: 10%;
+  } */
+`
+
+const VisionItem = styled.div`
+
+  @media ${device.mobile} { 
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+`
 
 const Container = styled(Parallax)`
   background-color: #20232f;
@@ -89,3 +116,22 @@ const Container = styled(Parallax)`
     text-transform: uppercase;
   }
 `;
+
+
+const visionData = [
+  {
+    icon: Img.비전01,
+    title: "글로벌 서브컬쳐 게임 제작",
+    content: "페이트처럼 글로벌하게 롱런하는 서브컬쳐게임,\n한국에도 하나쯤은 있어야 하지 않을까?\n우리가 해보자! 우리의 IP로 유니버스를 만들어 보자!",
+  },
+  {
+    icon: Img.비전02,
+    title: "서브컬쳐 게임 전문 퍼블리셔",
+    content: "서브컬쳐 게임 개발은 물론,\n성공적인 자체 서비스를 경험을 바탕으로\n서브컬쳐 게임 퍼블리셔로서 전세계 서브컬쳐 팬들을 만족시키는 회사가 되자!",
+  },
+  {
+    icon: Img.비전03,
+    title: "서브컬쳐 DNA를 잘 지켜나가자",
+    content: "서브컬쳐 팬들을 만족시키기 위해서는 거기에 맞는 DNA가 필요하다.\n우리가 보유한 이런 DNA를 잘 유지하고 발전시키자!",
+  },
+];
