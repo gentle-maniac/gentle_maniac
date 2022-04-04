@@ -24,3 +24,5 @@ export { default as n02 } from "./images/n02.에버릿.png";
 export { default as n03 } from "./images/n03.안채영.png";
 export { default as n04 } from "./images/n04.러프구체.png";
 export { default as n06 } from "./images/n06.사령술사2차.png";
+export { default as 캐릭터01 } from "./images/캐릭터01.png";
+export { default as 캐릭터02 } from "./images/캐릭터02.png";
