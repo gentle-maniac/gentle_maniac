@@ -88,7 +88,7 @@ const VisionItem = styled.div`
 
   .textWrapper {
     margin-top: 2rem;
-    padding-bottom: 4em;
+    padding-bottom: 1rem;
 
     h1 {
       margin-bottom: 2rem;
