@@ -14,14 +14,16 @@ export const WelfareSection = () => {
         <animated.h1>WELFARE</animated.h1>
 
         <div className="container">
-          {welfareData.map((v, i) => SectionItem(v, i))}
+          {welfareData.map((item, i) => (
+            <SectionItem key={i} item={item} />
+          ))}
         </div>
       </Wrapper>
     </SectionLayout>
   );
 };
 
-const SectionItem = (v, i) => {
+const SectionItem = ({ item }) => {
   const itemRef = useRef(null);
   const itemVisible = useObserver(itemRef, { threshold: 0 });
   const itemStyle = useSpring({
@@ -30,13 +32,13 @@ const SectionItem = (v, i) => {
   });
   return (
     <animated.div ref={itemRef} style={itemStyle}>
-      <WelfareItem key={i}>
+      <WelfareItem>
         <div className="icon">
-          <Image src={v.icon} alt="복지" priority />
+          <Image src={item.icon} alt="복지" priority />
         </div>
         <div>
-          <div className="title">{v.title}</div>
-          <div className="content">{v.content}</div>
+          <div className="title">{item.title}</div>
+          <div className="content">{item.content}</div>
         </div>
       </WelfareItem>
     </animated.div>
