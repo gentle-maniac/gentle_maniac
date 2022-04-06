@@ -2,10 +2,12 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Img } from "../assets";
 
-export const Footer = () => {
+export const Footer = ({ scrollToTop }) => {
   return (
     <Wrapper>
-      <Image src={Img.로고s} alt="footer_logo" />
+      <div onClick={scrollToTop}>
+        <Image src={Img.로고s} alt="footer_logo" />
+      </div>
     </Wrapper>
   );
 };
@@ -15,4 +17,8 @@ const Wrapper = styled.div`
   margin: auto;
   display: flex;
   justify-content: center;
+
+  & > div {
+    cursor: pointer;
+  }
 `;

@@ -68,7 +68,7 @@ export default function Index() {
         </ParallaxLayer>
 
         <ParallaxLayer offset={9.5} speed={0.3}>
-          <Footer />
+          <Footer scrollToTop={() => scrollTo(0)} />
         </ParallaxLayer>
       </Parallax>
     </>
