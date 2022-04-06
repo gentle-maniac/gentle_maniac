@@ -11,7 +11,7 @@ import {
   MakingSection,
 } from "../sections";
 
-export default function Index() {
+export default function Index({ isMobile }) {
   const parallaxRef = useRef(null);
 
   const scrollTo = (to) => {
@@ -22,7 +22,11 @@ export default function Index() {
     <>
       <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax className="parallax" ref={parallaxRef} pages={9.8}>
+      <Parallax
+        className="parallax"
+        ref={parallaxRef}
+        pages={isMobile ? 8.4 : 9.8}
+      >
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -59,18 +63,28 @@ export default function Index() {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={6.9} speed={0.5}>
+        <ParallaxLayer offset={isMobile ? 6 : 6.8} speed={0.5}>
           <WelfareSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={7.9} speed={0.2}>
+        <ParallaxLayer offset={isMobile ? 7 : 7.9} speed={0.2}>
           <MakingSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={9.5} speed={0.3}>
+        <ParallaxLayer offset={isMobile ? 8 : 9.5} speed={0.3}>
           <Footer scrollToTop={() => scrollTo(0)} />
         </ParallaxLayer>
       </Parallax>
     </>
   );
 }
+
+Index.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      userAgent
+    );
+
+  return { isMobile };
+};
