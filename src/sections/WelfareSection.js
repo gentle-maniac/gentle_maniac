@@ -48,18 +48,30 @@ const SectionItem = ({ item }) => {
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  border-top: 4px solid #d29b3a;
+  border: 4px solid #d29b3a;
+  padding: 5rem 4rem;
 
   h1 {
-    margin-top: 4rem;
-    margin-left: 2rem;
     font-weight: 900;
     color: #d29b3a;
+    margin-bottom: 0rem;
+  }
+
+  .container {
+    margin: 4rem 0rem;
+  }
+
+  @media ${device.mobile} {
+    padding: 2rem;
+
+    .container {
+      margin: 2rem 0rem;
+    }
   }
 `;
 
 const WelfareItem = styled.div`
-  margin-left: 30%;
+  margin-left: 25%;
   margin-bottom: 2rem;
   display: flex;
 
@@ -72,7 +84,7 @@ const WelfareItem = styled.div`
     height: 90px;
     border-radius: 16px;
     background-color: gray;
-    box-shadow: #d29b3a70 0px 0px 30px 0px;
+    box-shadow: #d29b3a90 0px 0px 40px 0px;
   }
   .title {
     font-size: 1.75rem;
@@ -84,7 +96,7 @@ const WelfareItem = styled.div`
   }
 
   @media ${device.mobile} {
-    margin-left: 2rem;
+    margin-left: 0rem;
 
     & > * + * {
       margin-left: 1rem;
