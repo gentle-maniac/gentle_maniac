@@ -14,9 +14,7 @@ export const WelfareSection = () => {
         <animated.h1>WELFARE</animated.h1>
 
         <div className="container">
-          { welfareData.map((v, i) => (
-            SectionItem(v,i)
-          ))}
+          {welfareData.map((v, i) => SectionItem(v, i))}
         </div>
       </Wrapper>
     </SectionLayout>
@@ -25,13 +23,13 @@ export const WelfareSection = () => {
 
 const SectionItem = (v, i) => {
   const itemRef = useRef(null);
-  const itemVisible = useObserver(itemRef);
+  const itemVisible = useObserver(itemRef, { threshold: 0 });
   const itemStyle = useSpring({
     opacity: itemVisible ? 1 : 0,
     x: itemVisible ? 0 : -150,
   });
   return (
-    <animated.div ref={itemRef} style={ itemStyle }>
+    <animated.div ref={itemRef} style={itemStyle}>
       <WelfareItem key={i}>
         <div className="icon">
           <Image src={v.icon} alt="복지" priority />
@@ -42,8 +40,8 @@ const SectionItem = (v, i) => {
         </div>
       </WelfareItem>
     </animated.div>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   height: 100%;
@@ -70,7 +68,7 @@ const WelfareItem = styled.div`
   .icon {
     width: 90px;
     height: 90px;
-    border-radius: 10px;
+    border-radius: 16px;
     background-color: gray;
     box-shadow: #d29b3a70 0px 0px 30px 0px;
   }
@@ -83,7 +81,7 @@ const WelfareItem = styled.div`
     margin-top: 4px;
   }
 
-  @media ${device.mobile} { 
+  @media ${device.mobile} {
     margin-left: 2rem;
 
     & > * + * {
@@ -97,7 +95,7 @@ const WelfareItem = styled.div`
 
     .title {
       margin-top: 6px;
-      font-size: 1.0rem;
+      font-size: 1rem;
       font-weight: 900;
     }
 
