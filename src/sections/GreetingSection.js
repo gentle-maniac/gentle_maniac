@@ -2,7 +2,6 @@
 import styled from "styled-components";
 import { SectionLayout } from "../components";
 import { device } from "../styles";
-import { Img } from "../assets";
 
 export const GreetingSection = () => {
   return (
@@ -38,7 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 7rem;
+  margin-top: 9rem;
   background-image: url('/assets/images/배경화면01.png');
 
   h1 {
