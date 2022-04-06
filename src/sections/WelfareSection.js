@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { animated, useSpring } from "react-spring";
 import { device } from "../styles";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
-import { useObserver } from "../utils";
+import { useObserverOnce } from "../utils";
 
 export const WelfareSection = () => {
   return (
@@ -25,7 +25,7 @@ export const WelfareSection = () => {
 
 const SectionItem = ({ item }) => {
   const itemRef = useRef(null);
-  const itemVisible = useObserver(itemRef, { threshold: 0 });
+  const itemVisible = useObserverOnce(itemRef, { threshold: 0 });
   const itemStyle = useSpring({
     opacity: itemVisible ? 1 : 0,
     x: itemVisible ? 0 : -150,
@@ -80,7 +80,7 @@ const WelfareItem = styled.div`
     color: #d29b3a;
   }
   .content {
-    margin-top: 4px;
+    margin-top: 8px;
   }
 
   @media ${device.mobile} {
@@ -132,7 +132,7 @@ const welfareData = [
   {
     icon: Img.복지05,
     title: "[청년내일채움 가입 적용]",
-    content: "목돈마련 회사에서 정부에서 함께 도와줘요",
+    content: "목돈마련, 회사와 정부에서 함께 도와줘요",
   },
   {
     icon: Img.복지06,
@@ -140,8 +140,13 @@ const welfareData = [
     content: "꼰대 문화 없어요",
   },
   {
-    icon: Img.복지07,
+    icon: Img.복지_비타민,
     title: "[건강을 위하여]",
-    content: `매월 1회 피자 or 버거파티\n영양제 구비 직원 건강을 챙겨요`,
+    content: `영양제 구비 직원 건강을 챙겨요`,
+  },
+  {
+    icon: Img.복지_햄버거,
+    title: "[소확행을 위하여]",
+    content: `매월 1회 피자 or 버거파티를 즐겨요`,
   },
 ];
