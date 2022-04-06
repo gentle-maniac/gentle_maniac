@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { animated, useSpring } from "react-spring";
 import { device } from "../styles";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
-import { useObserver } from "../utils";
+import { useObserverOnce } from "../utils";
 
 export const WelfareSection = () => {
   return (
@@ -14,8 +14,8 @@ export const WelfareSection = () => {
         <animated.h1>WELFARE</animated.h1>
 
         <div className="container">
-          { welfareData.map((v, i) => (
-            SectionItem(v,i)
+          {welfareData.map((item, i) => (
+            <SectionItem key={i} item={item} />
           ))}
         </div>
       </Wrapper>
@@ -23,43 +23,55 @@ export const WelfareSection = () => {
   );
 };
 
-const SectionItem = (v, i) => {
+const SectionItem = ({ item }) => {
   const itemRef = useRef(null);
-  const itemVisible = useObserver(itemRef);
+  const itemVisible = useObserverOnce(itemRef, { threshold: 0 });
   const itemStyle = useSpring({
     opacity: itemVisible ? 1 : 0,
     x: itemVisible ? 0 : -150,
   });
   return (
-    <animated.div ref={itemRef} style={ itemStyle }>
-      <WelfareItem key={i}>
+    <animated.div ref={itemRef} style={itemStyle}>
+      <WelfareItem>
         <div className="icon">
-          <Image src={v.icon} alt="복지" priority />
+          <Image src={item.icon} alt="복지" priority />
         </div>
         <div>
-          <div className="title">{v.title}</div>
-          <div className="content">{v.content}</div>
+          <div className="title">{item.title}</div>
+          <div className="content">{item.content}</div>
         </div>
       </WelfareItem>
     </animated.div>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  border-top: 4px solid #d29b3a;
+  border: 4px solid #d29b3a;
+  padding: 5rem 4rem;
 
   h1 {
-    margin-top: 4rem;
-    margin-left: 2rem;
     font-weight: 900;
     color: #d29b3a;
+    margin-bottom: 0rem;
+  }
+
+  .container {
+    margin: 4rem 0rem;
+  }
+
+  @media ${device.mobile} {
+    padding: 2rem;
+
+    .container {
+      margin: 2rem 0rem;
+    }
   }
 `;
 
 const WelfareItem = styled.div`
-  margin-left: 30%;
+  margin-left: 25%;
   margin-bottom: 2rem;
   display: flex;
 
@@ -70,9 +82,9 @@ const WelfareItem = styled.div`
   .icon {
     width: 90px;
     height: 90px;
-    border-radius: 10px;
+    border-radius: 16px;
     background-color: gray;
-    box-shadow: #d29b3a70 0px 0px 30px 0px;
+    box-shadow: #d29b3a90 0px 0px 40px 0px;
   }
   .title {
     font-size: 1.75rem;
@@ -80,11 +92,11 @@ const WelfareItem = styled.div`
     color: #d29b3a;
   }
   .content {
-    margin-top: 4px;
+    margin-top: 8px;
   }
 
-  @media ${device.mobile} { 
-    margin-left: 2rem;
+  @media ${device.mobile} {
+    margin-left: 0rem;
 
     & > * + * {
       margin-left: 1rem;
@@ -97,7 +109,7 @@ const WelfareItem = styled.div`
 
     .title {
       margin-top: 6px;
-      font-size: 1.0rem;
+      font-size: 1rem;
       font-weight: 900;
     }
 
@@ -132,7 +144,7 @@ const welfareData = [
   {
     icon: Img.복지05,
     title: "[청년내일채움 가입 적용]",
-    content: "목돈마련 회사에서 정부에서 함께 도와줘요",
+    content: "목돈마련, 회사와 정부에서 함께 도와줘요",
   },
   {
     icon: Img.복지06,
@@ -140,8 +152,13 @@ const welfareData = [
     content: "꼰대 문화 없어요",
   },
   {
-    icon: Img.복지07,
+    icon: Img.복지_비타민,
     title: "[건강을 위하여]",
-    content: `매월 1회 피자 or 버거파티\n영양제 구비 직원 건강을 챙겨요`,
+    content: `영양제 구비 직원 건강을 챙겨요`,
+  },
+  {
+    icon: Img.복지_햄버거,
+    title: "[소확행을 위하여]",
+    content: `매월 1회 피자 or 버거파티를 즐겨요`,
   },
 ];

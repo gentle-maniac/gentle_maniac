@@ -3,7 +3,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
-import { device } from "../styles";
 
 export const MakingSection = () => {
   return (
@@ -14,9 +13,9 @@ export const MakingSection = () => {
           <Image src={Img.캐릭터01} alt="making_001" />
           <Image src={Img.캐릭터02} alt="making_002" />
         </Row>
-        
+
         <Image src={Img.n06} alt="making_01" />
-        {/* <Image src={Img.n01} alt="making_02" /> */}
+
         <Row>
           <Image src={Img.n02} alt="making_03" />
           <Image src={Img.n03} alt="making_04" />
