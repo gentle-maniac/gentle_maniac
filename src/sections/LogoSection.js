@@ -15,13 +15,7 @@ export const LogoSection = () => {
   const visible = useObserver(ref);
 
   const { opacity } = useSpring({ opacity: mounted ? 1 : 0 });
-  const style = useSpring({ transform: visible ? "scale(1.0)" : "scale(0.7)",});
-
-  const backgroundStyle = useSpring({
-
-    opacity: 0.9,
-    config: { duration: 0 },
-  });
+  const style = useSpring({ transform: visible ? "scale(1.0)" : "scale(0.7)" });
 
   return (
     <SectionLayout theme="black">
@@ -34,12 +28,4 @@ export const LogoSection = () => {
 
 const Wrapper = styled(animated.div)`
   max-width: 720px;
-`;
-
-const Background = styled(animated.div)`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  pointer-events: none;
 `;
