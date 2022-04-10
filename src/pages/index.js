@@ -11,7 +11,7 @@ import {
   MakingSection,
 } from "../sections";
 
-export default function Index({ isMobile }) {
+export default function Index() {
   const parallaxRef = useRef(null);
 
   const scrollTo = (to) => {
@@ -22,11 +22,7 @@ export default function Index({ isMobile }) {
     <>
       <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax
-        className="parallax"
-        ref={parallaxRef}
-        pages={isMobile ? 8.4 : 11.5}
-      >
+      <Parallax className="parallax" ref={parallaxRef} pages={11.5}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -36,7 +32,7 @@ export default function Index({ isMobile }) {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1.5}
+          offset={1.6}
           speed={0.3}
           style={{ pointerEvents: "none" }}
         >
@@ -48,8 +44,8 @@ export default function Index({ isMobile }) {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2.6}
-          speed={0.3}
+          offset={2.7}
+          speed={0.4}
           style={{ pointerEvents: "none" }}
         >
           <DirectorImage src="대표님01" align="flex-end" />
@@ -63,15 +59,15 @@ export default function Index({ isMobile }) {
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={isMobile ? 6 : 7} speed={0.4}>
+        <ParallaxLayer offset={7} speed={0.4}>
           <WelfareSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={isMobile ? 7 : 8.9} speed={0.1}>
+        <ParallaxLayer offset={8.9} speed={0.1}>
           <MakingSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={isMobile ? 8 : 11} speed={0.3}>
+        <ParallaxLayer offset={11} speed={0.3}>
           <Footer scrollToTop={() => scrollTo(0)} />
         </ParallaxLayer>
       </Parallax>

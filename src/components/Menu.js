@@ -5,7 +5,7 @@ import { Img } from "../assets";
 import { device } from "../styles";
 
 export const Menu = ({ scrollTo }) => {
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(true);
 
   const onClickMenu = (to) => {
     setHide(true);
@@ -15,12 +15,7 @@ export const Menu = ({ scrollTo }) => {
   return (
     <Wrapper>
       <div className="icon" onClick={() => setHide(!hide)}>
-        <Image
-          src={hide ? Img.메뉴아이콘 : Img.메뉴닫기아이콘}
-          alt="메뉴"
-          width={40}
-          height={40}
-        />
+        <Image src={hide ? Img.메뉴아이콘 : Img.메뉴닫기아이콘} alt="메뉴" />
       </div>
 
       <div className={`container ${hide ? "hide" : ""}`}>
@@ -35,9 +30,6 @@ export const Menu = ({ scrollTo }) => {
 };
 
 const Wrapper = styled.div`
-  @media ${device.mobile} {
-    display: none;
-  }
   position: absolute;
   top: 2rem;
   right: 1.5rem;
@@ -47,7 +39,13 @@ const Wrapper = styled.div`
   align-items: flex-end;
 
   .icon {
+    @media ${device.mobile} {
+      width: 30px;
+      height: 30px;
+    }
     cursor: pointer;
+    width: 40px;
+    height: 40px;
   }
 
   .container {
