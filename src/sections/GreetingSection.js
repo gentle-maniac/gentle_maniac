@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 9rem;
+  margin-top: 10%;
 
   h1 {
     @media ${device.mobile} {
