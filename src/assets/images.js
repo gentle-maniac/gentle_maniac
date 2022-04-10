@@ -3,6 +3,7 @@ export { default as 대표님01 } from "./images/대표님01.png";
 export { default as 대표님02 } from "./images/대표님02.png";
 export { default as 로고 } from "./images/로고.png";
 export { default as 로고s } from "./images/로고s.png";
+export { default as 메뉴아이콘 } from "./images/메뉴아이콘.png";
 export { default as 복지_비타민 } from "./images/복지_비타민.png";
 export { default as 복지_햄버거 } from "./images/복지_햄버거.png";
 export { default as 복지01 } from "./images/복지01.png";

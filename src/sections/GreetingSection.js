@@ -38,7 +38,6 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 9rem;
-  background-image: url('/assets/images/배경화면01.png');
 
   h1 {
     @media ${device.mobile} {
