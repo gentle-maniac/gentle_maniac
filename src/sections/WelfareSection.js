@@ -34,7 +34,7 @@ const SectionItem = ({ item }) => {
     <animated.div ref={itemRef} style={itemStyle}>
       <WelfareItem>
         <div className="icon">
-          <Image src={item.icon} alt="복지" priority />
+          <Image src={item.icon} alt="복지" />
         </div>
         <div>
           <div className="title">{item.title}</div>
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   border: 4px solid #d29b3a;
-  padding: 5rem 4rem;
+  padding: 5rem 0rem 5rem 4rem;
 
   h1 {
     font-weight: 900;
@@ -62,7 +62,8 @@ const Wrapper = styled.div`
   }
 
   @media ${device.mobile} {
-    padding: 2rem;
+    padding: 1.5rem;
+    padding-right: 0.5rem;
 
     .container {
       margin: 2rem 0rem;
@@ -71,15 +72,25 @@ const Wrapper = styled.div`
 `;
 
 const WelfareItem = styled.div`
+  @media ${device.mobile} {
+    margin-left: 0rem;
+  }
   margin-left: 25%;
   margin-bottom: 2rem;
   display: flex;
 
   & > * + * {
+    @media ${device.mobile} {
+      margin-left: 1rem;
+    }
     margin-left: 3rem;
   }
 
   .icon {
+    @media ${device.mobile} {
+      width: 60px;
+      height: 60px;
+    }
     width: 90px;
     height: 90px;
     border-radius: 16px;
@@ -87,36 +98,19 @@ const WelfareItem = styled.div`
     box-shadow: #d29b3a90 0px 0px 40px 0px;
   }
   .title {
+    @media ${device.mobile} {
+      font-size: 1rem;
+      font-weight: 900;
+    }
     font-size: 1.75rem;
     font-weight: 900;
     color: #d29b3a;
   }
   .content {
-    margin-top: 8px;
-  }
-
-  @media ${device.mobile} {
-    margin-left: 0rem;
-
-    & > * + * {
-      margin-left: 1rem;
-    }
-
-    .icon {
-      width: 60px;
-      height: 60px;
-    }
-
-    .title {
-      margin-top: 6px;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    .content {
-      margin-top: 8px;
+    @media ${device.mobile} {
       font-size: 12px;
     }
+    margin-top: 8px;
   }
 `;
 
