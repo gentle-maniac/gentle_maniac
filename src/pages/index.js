@@ -18,8 +18,6 @@ export default function Index({ isMobile }) {
     parallaxRef.current?.scrollTo(to);
   };
 
-  console.log(isMobile);
-
   return (
     <>
       <Menu scrollTo={scrollTo} />
