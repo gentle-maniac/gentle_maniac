@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export const SEO = ({
   title = "젠틀매니악",
-  description = "About Gentle Maniac",
+  description = "국내 최고의 서브컬처 게임 개발사",
   author = "Gentle Maniac",
 }) => {
   return (
