@@ -20,16 +20,16 @@ const Wrapper = styled.div`
   justify-content: ${(props) => props.align};
   max-width: 1140px;
   height: 100%;
+
   & > div {
+    @media ${device.mobile} {
+      width: 200px;
+    }
+
     position: relative;
     margin: 0rem 3rem;
     width: 400px;
     height: 100%;
-  }
-
-  @media ${device.mobile} {
-    & > div {
-      width: 250px;
-    }
+    z-index: 1000;
   }
 `;
