@@ -36,6 +36,9 @@ export const TalentSection = () => {
 
 const Wrapper = styled.div`
   & > :last-child {
+    @media ${device.mobile} {
+      margin-top: 4rem;
+    }
     margin-top: 10rem;
 
     & > *:nth-child(even) {

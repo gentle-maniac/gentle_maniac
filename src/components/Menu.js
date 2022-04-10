@@ -1,49 +1,63 @@
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
+import { Img } from "../assets";
 import { device } from "../styles";
-import { toFit } from "../utils";
 
 export const Menu = ({ scrollTo }) => {
-  const [scrollY, setScrollY] = useState(0);
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(true);
 
-  useEffect(() => {
-    const listener = toFit((e) => {
-      const nextSrollY = e.target.scrollTop;
-      setHide(nextSrollY > scrollY);
-      setScrollY(nextSrollY);
-    });
-
-    const $parallax = document.querySelector(".parallax");
-    $parallax.addEventListener("scroll", listener);
-    return () => $parallax.removeEventListener("scroll", listener);
-  }, [scrollY]);
+  const onClickMenu = (to) => {
+    setHide(true);
+    scrollTo(to);
+  };
 
   return (
     <Wrapper>
-      {menuData.map(({ text, to }, i) => (
-        <p key={i} className={hide ? "hide" : ""} onClick={() => scrollTo(to)}>
-          {text}
-        </p>
-      ))}
+      <div className="icon" onClick={() => setHide(!hide)}>
+        <Image src={hide ? Img.메뉴아이콘 : Img.메뉴닫기아이콘} alt="메뉴" />
+      </div>
+
+      <div className={`container ${hide ? "hide" : ""}`}>
+        {menuData.map(({ text, to }, i) => (
+          <p key={i} onClick={() => onClickMenu(to)}>
+            {text}
+          </p>
+        ))}
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  @media ${device.mobile} {
-    display: none;
-  }
   position: absolute;
   top: 2rem;
   right: 1.5rem;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  & > p {
+  .icon {
+    @media ${device.mobile} {
+      width: 30px;
+      height: 30px;
+    }
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+
+  .container {
+    margin-top: 0.5rem;
+    transition: all 200ms ease-in-out;
+    user-select: none;
+    text-align: end;
+  }
+
+  p {
     color: white;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
-    text-align: right;
 
     &:hover {
       font-family: NanumSquareBold;
@@ -51,7 +65,7 @@ const Wrapper = styled.div`
   }
 
   .hide {
-    transform: translateY(40px);
+    transform: translateX(40px);
     opacity: 0;
     visibility: hidden;
   }
@@ -75,7 +89,11 @@ const menuData = [
     text: "인재상",
   },
   {
-    to: 6.5,
+    to: 7,
     text: "복지",
+  },
+  {
+    to: 8.8,
+    text: "메이킹",
   },
 ];

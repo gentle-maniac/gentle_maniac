@@ -62,8 +62,9 @@ const VisionItem = styled.div`
 
   .indicator {
     @media ${device.mobile} {
-      font-size: 400px;
-      left: 0px;
+      font-size: 300px;
+      left: -30px;
+      top: 30px;
     }
     font-family: "Kanit", sans-serif;
     font-size: 500px;
@@ -73,6 +74,7 @@ const VisionItem = styled.div`
     text-transform: uppercase;
     user-select: none;
     position: absolute;
+    z-index: -1;
     left: -110px;
     top: 4rem;
   }
