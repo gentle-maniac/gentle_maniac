@@ -8,7 +8,7 @@ export const MakingSection = () => {
   return (
     <SectionLayout theme="black" justify="flex-start">
       <div>
-        <h1 className="gold">MAKING</h1>
+        <h1 className="gold">ArtWorks</h1>
         <Row>
           <Image src={Img.캐릭터01} alt="making_001" />
           <Image src={Img.캐릭터02} alt="making_002" />
