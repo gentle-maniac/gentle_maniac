@@ -36,7 +36,7 @@ export default function Index() {
           speed={0.3}
           style={{ pointerEvents: "none" }}
         >
-          <DirectorImage src="대표님02" />
+          <DirectorImage src="대표님01" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={0.2}>
@@ -48,7 +48,7 @@ export default function Index() {
           speed={0.4}
           style={{ pointerEvents: "none" }}
         >
-          <DirectorImage src="대표님01" align="flex-end" />
+          <DirectorImage src="대표님02" align="flex-end" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={0.2}>
