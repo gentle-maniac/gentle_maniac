@@ -94,6 +94,6 @@ const menuData = [
   },
   {
     to: 8.8,
-    text: "메이킹",
+    text: "작품",
   },
 ];
