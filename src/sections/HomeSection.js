@@ -22,7 +22,7 @@ export const HomeSection = () => {
         <Trail open={visible}>
           <div>
             <h2>
-            국내대표 서브컬쳐게임 핵심 개발진<p>으로 구성된</p>
+            국내대표 서브컬처게임 핵심 개발진<p>으로 구성된</p>
             </h2>
           </div>
           <h1>

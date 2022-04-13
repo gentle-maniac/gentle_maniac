@@ -74,7 +74,7 @@ const Wrapper = styled.div`
 const menuData = [
   {
     to: 0,
-    text: "젠틀메니악",
+    text: "젠틀매니악",
   },
   {
     to: 2,
