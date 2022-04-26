@@ -3,14 +3,22 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
+import SimpleImageSlider from "react-simple-image-slider";
 
 export const MakingSection = () => {
   return (
     <SectionLayout theme="black" justify="flex-start">
       <div>
         <h1 className="gold">ArtWorks</h1>
+        <SimpleImageSlider
+          width={896}
+          height={504}
+          images={artworks}
+          showBullets={true}
+          showNavs={true}
+        />
         <Row>
-          <Image src={Img.캐릭터01} alt="making_001" />
+          <Image src={Img.artwork1} alt="making_001" />
           <Image src={Img.캐릭터02} alt="making_002" />
         </Row>
 
@@ -27,6 +35,11 @@ export const MakingSection = () => {
     </SectionLayout>
   );
 };
+
+const artworks = [
+  { url: Img.artwork1 },
+  { url: Img.artwork2 },
+]
 
 const Row = styled.div`
   display: flex;
