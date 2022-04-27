@@ -53,7 +53,7 @@ const GreetingItem = ({ item, index }) => {
         <Image src={item.icon} alt={`${index}-icon`} />
       </div>
       
-      <div>
+      <div className="description">
         <h2>{item.title}</h2>
         <br/>
         <p>{item.content}</p>
@@ -67,12 +67,17 @@ const ItemWrapper = styled.div`
   align-items: center;
 
   .icon {
-    @media ${device.mobile} {
-      display: none;
-    }
     flex-shrink: 0;
     width: 300px;
     margin-right: 24px;
+
+    @media ${device.mobile} {
+      display: none;
+    }
+  }
+
+  .description {
+    
   }
 
   p {
@@ -83,9 +88,7 @@ const ItemWrapper = styled.div`
   }
 `;
 
-
-
-export const greetingData = [
+const greetingData = [
   {
     icon: Img.대표님01,
     title: "복규동 대표",
