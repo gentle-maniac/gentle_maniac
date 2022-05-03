@@ -6,6 +6,8 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
 import { device } from "../styles";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { animated, useSpring } from "react-spring";
 
 export const VisionSection = () => {
   const parallax = useRef(null);
@@ -27,6 +29,12 @@ export const VisionSection = () => {
   );
 };
 
+const Wrapper = styled.div`
+  display: flex-start;
+  
+`
+
+
 const Page = ({ offset, gradient, onClick }) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2}>
@@ -43,9 +51,12 @@ const Page = ({ offset, gradient, onClick }) => (
         <div className="icon">
           <Image src={visionData[offset].icon} alt="비전" />
         </div>
-        <div className="textWrapper">
-          <h1>{visionData[offset].title}</h1>
-          <p>{visionData[offset].content}</p>
+        <div className="vision-content">
+          <div className="textWrapper">
+            <h1>{visionData[offset].title}</h1>
+            <p>{visionData[offset].content}</p>
+          </div>
+          <AiOutlineRight className="arrow" />
         </div>
       </VisionItem>
     </ParallaxLayer>
@@ -88,18 +99,33 @@ const VisionItem = styled.div`
     height: 200px;
   }
 
+  .vision-content {
+    display: flex;
+    align-items: center;
+  }
+
   .textWrapper {
     margin-top: 2rem;
+    margin-right: 48px;
     padding-bottom: 1rem;
 
     h1 {
       margin-bottom: 2rem;
     }
   }
+
+  .arrow {
+    @media ${device.mobile} {
+      display: none;
+    }
+    width: 42px;
+    height: 42px;
+    
+  }
 `;
 
 const Container = styled(Parallax)`
-  background-color: #20232f;
+  background-color: black; //#20232f;
 
   & > div > div {
     display: flex;
@@ -109,7 +135,7 @@ const Container = styled(Parallax)`
   }
 
   .slopeBegin {
-    background-color: #20232f;
+    background-color: black; //#20232f;
     clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%);
   }
 

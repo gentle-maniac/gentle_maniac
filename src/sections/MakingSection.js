@@ -4,32 +4,107 @@ import styled from "styled-components";
 import { Img } from "../assets";
 import { SectionLayout } from "../components";
 import Carousel from "../components/Carousel";
+import { device } from "../styles";
 
 export const MakingSection = () => {
   return (
     <SectionLayout theme="black" justify="flex-start">
-      <div>
-        <h1 className="gold">ArtWorks</h1>
-        <Carousel images={artworks}/>
-
-        {/* <Row>
-          <Image src={Img.artwork1} alt="making_001" />
-          <Image src={Img.캐릭터02} alt="making_002" />
-        </Row>
-
-        <Image src={Img.n06} alt="making_01" />
-
-        <Row>
-          <Image src={Img.n02} alt="making_03" />
-          <Image src={Img.n03} alt="making_04" />
-          <div>
-            <Image src={Img.n04} alt="making_05" />
+      <h1 className="gold">ArtWorks</h1>
+      <Wrapper>
+        <div className="gallery-content">
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 0 <= i && i <=3 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
           </div>
-        </Row> */}
-      </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 4 <= i && i <=7 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 8 <= i && i <=11 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 12 <= i && i <=15 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 16 <= i && i <=19 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 20 <= i && i <=23 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 24 <= i && i <=27 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 28 <= i && i <=31 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 32 <= i && i <=35 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+          <div className="gallery">
+            {artworks.filter((a,i,v) => 36 <= i && i <=36 ).map((item, index) => (
+                <div onClick={() => { showImage(index) }} className="image-content"><Image src={item} alt="making" width={240} height={160} objectFit="cover"/></div>
+              ))}
+          </div>
+        </div>
+        <div className="gallery-slide">
+          <Carousel images={artworks}/>
+        </div>
+      </Wrapper>
     </SectionLayout>
   );
 };
+
+const showImage = (idx) => {
+  console.log(idx)
+}
+
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .gallery-content {
+    @media ${device.mobile} {
+      display: none;
+    }
+  }
+  .gallery-slide {
+    display: none;
+    @media ${device.mobile} {
+      display: block;
+    }
+  }
+
+  .gallery {
+    display: flexbox;
+    flex-direction: row;
+  }
+
+  .image-content {
+    width: 240px;
+    height: 160px;
+  }
+
+  
+`
 
 const artworks = [ 
   Img.캐릭터01,
@@ -71,13 +146,3 @@ const artworks = [
   Img.artwork35,
   Img.artwork36,
 ]
-
-
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  & > *:last-child {
-    margin-left: 3rem;
-  }
-`;

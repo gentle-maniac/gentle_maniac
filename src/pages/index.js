@@ -22,7 +22,7 @@ export default function Index() {
     <>
       <Menu scrollTo={scrollTo} />
       <SEO />
-      <Parallax className="parallax" ref={parallaxRef} pages={9.7}>
+      <Parallax className="parallax" ref={parallaxRef} pages={11}>
         <ParallaxLayer offset={0} speed={0.3}>
           <LogoSection />
         </ParallaxLayer>
@@ -35,23 +35,23 @@ export default function Index() {
           <GreetingSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.3} speed={0.2}>
+        <ParallaxLayer offset={3.5} speed={0.2}>
           <VisionSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.4} speed={0.1} factor={4}>
+        <ParallaxLayer offset={4.5} speed={0.1} factor={4}>
           <TalentSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={7.0} speed={0.4}>
+        <ParallaxLayer offset={7.2} speed={0.4}>
           <WelfareSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={8.5} speed={0.1}>
+        <ParallaxLayer offset={8.7} speed={0.1}>
           <MakingSection />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={9.3} speed={0.3}>
+        <ParallaxLayer offset={10.8} speed={0.3}>
           <Footer scrollToTop={() => scrollTo(0)} />
         </ParallaxLayer>
       </Parallax>

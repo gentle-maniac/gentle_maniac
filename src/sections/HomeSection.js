@@ -26,7 +26,7 @@ export const HomeSection = () => {
             </h2>
           </div>
           <h1>
-            국내 최고의 <span className="u">서브컬처</span> 게임 개발사
+            최고의 <span className="u">서브컬처</span> 게임 개발사
           </h1>
         </Trail>
       </Wrapper>
